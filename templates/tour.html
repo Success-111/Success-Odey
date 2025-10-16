@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Success Odey-Tour{% endblock %}
+{% block content %}
+   <!-- Tour Dates Section -->
+  <section id="tour">
+    <h2>Tour Dates</h2>
+    <p>Check out my upcoming shows:</p>
+    {% for tour in tours %}
+    <ul class="tour-list">
+      <li><strong>{{ tour.date_added }}</strong> {{ tour.venue }}</li>
+    </ul>
+    {% endfor %}
+  </section>
+{% endblock %}

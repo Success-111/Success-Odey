@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website for [Your Name]">
+  <title>{% block title %}Success Odey | Home{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- Header Section with Hamburger Menu for Mobile -->
+  <header>
+    <div class="logo">
+      <h1>Success Odey</h1>
+    </div>
+    <nav>
+      <div class="menu-toggle" id="mobile-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'music' %}">Music</a></li>
+        <li><a href="{% url 'bio' %}">Bio</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'shop' %}">Shop</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'tour' %}">Tour</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {% block content %}
+  
+  {% endblock %}
+
+  <!-- JavaScript to Toggle Menu on Mobile -->
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+    <footer>
+        <p>&copy; 2024 [Odey Owoche Success]. All rights reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+    
+</body>
+</html>

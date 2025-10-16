@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block title %}Success Odey-Gallery{% endblock %}
+{% block content %}
+<h1 class="gal_heading">Gallery</h1>
+
+  <section id="gallery">
+    {% for image in gallery_images %}
+    <div class="gallery-grid">
+      <img src="{{ image.image.url }}" alt="{{ image.photo_title }}" >
+      <h3>{{ image.photo_title }}</h3>
+      <p>{{ image.date_added }}</p>
+    </div>
+    {% endfor %}
+  </section>
+{% endblock %}
+  
